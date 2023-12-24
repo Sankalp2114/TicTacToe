@@ -19,12 +19,9 @@ let gameEnded = false;
 playBoxes.forEach(playbox => {
     playbox.addEventListener('click', (e) => {
         const target = e.target;
-        
-        
         if (gameEnded || target.innerText !== "") {
             return; 
         }
-
         target.innerText = currentPlayer;
         checkWin();
         changePlayer();
@@ -43,7 +40,6 @@ function checkWin() {
     for (let i = 0; i < wins.length; i++) {
         const win = wins[i];
         const [a, b, c] = win;
-        
         const box1 = playBoxes[a];
         const box2 = playBoxes[b];
         const box3 = playBoxes[c];   
